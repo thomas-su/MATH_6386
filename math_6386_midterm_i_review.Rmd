@@ -1,0 +1,261 @@
+```{r}
+# Question 1
+# Point out the correct statement.
+# Hadoop 2.0 allows live stream processing of real-time data
+```
+
+
+```{r}
+# Question 2
+# Hadoop is a framework that works with a variety of related tools. Common cohorts include __________.
+# MapReduce, Hive and HBase
+```
+
+```{r}
+# Question 3
+# What was Hadoop named after?
+# The toy elephant of Cutting's son 
+```
+
+```{r}
+# Question 4
+# __________ can best be described as a programming model used to develop Hadoop-based applications that can process massive amounts of data.
+# MapReduce
+
+# Explanation: MapReduce is a programming model and an associated implementation for processing and generating large data sets with a parallel, distributed algorithm
+```
+
+```{r}
+# Question 5
+# What are two keys components of HDFS and what are they used for?
+# NameNode for metadata and DataNode for block storage 
+```
+
+```{r}
+# Question 6
+# What is the order of the three steps to Map Reduce?
+# Map -> Shuffle and Sort -> Reduce
+```
+
+```{r}
+# Question 7
+# What is the purpose of YARN?
+# allow various applications to run on the same Hadoop cluster
+```
+
+```{r}
+# Question 8
+# The function from dfs() is a
+#
+```
+
+```{r}
+# Question 9
+# What can be the minimum number of reducers in map reduce?
+# 0
+```
+
+
+```{r}
+# Question 10
+library(data.table)
+id = c(1, 1, 1, 2, 2)
+code = c('abc', 'abc', 'abd', 'apq', 'apq')
+valA = c(0.1, 0.6, 1.5, 0.9, 0.3)
+valB = c(11, 7, 5, 10, 13)
+dt = data.table(id, code, valA, valB)
+dt
+
+# Which of the following is the correct script to compute mean of valA and valB group by code?
+dt[,.(mean(valA), mean(valB)), by = code]
+```
+
+```{r}
+# Question 11
+library(data.table)
+id = c(1, 1, 1, 2, 2)
+code = c('abc', 'abc', 'abd', 'apq', 'apq')
+valA = c(0.1, 0.6, 1.5, 0.9, 0.3)
+valB = c(11, 7, 5, 10, 13)
+dt = data.table(id, code, valA, valB)
+dt
+
+# which of the following is the correct script to compute frequency of occurrence of id values?
+table(dt$id)
+```
+
+```{r}
+# Question 12
+library(data.table)
+id = c(1, 1, 1, 2, 2)
+code = c('abc', 'abc', 'abd', 'apq', 'apq')
+valA = c(0.1, 0.6, 1.5, 0.9, 0.3)
+valB = c(11, 7, 5, 10, 13)
+dt = data.table(id, code, valA, valB)
+
+dcast.data.table(dt, id~code, fun.aggregate = mean, value.var = "valA")
+#What does the dcast function call generate?
+# It pivots the table having id as rows and code as columns and fill-in the table cells with mean of valA.
+```
+
+```{r}
+# Question 13
+# The data.table is a data-structure of the data.table package. It is
+# an extension of base R's data.frame data-structure
+```
+
+```{r}
+# Question 14
+# The data.table package reads and write data at a faster rate because,
+# It parallelizes data reading and writing operations
+```
+
+```{r}
+# Question 15
+# What are the three types of diverse data sources?
+# Machine Data, Organizational Data, People Data
+```
+
+```{r}
+# Question 16
+# The Amazon __________ is a set of Web-based services that allow business subscribers to run application programs in the Amazon.com computing environment.
+# EC2
+```
+
+```{r}
+# Question 17
+# HDFS is a __________ filesystem
+# write once Read many
+```
+
+```{r}
+# Question 18
+# The YARN process that negotiates resources from the Resource Manager is called the __________
+# Application Master
+```
+
+```{r}
+# Question 19
+# Which of the following are among the duties of the Data Nodes in HDFS?
+# Store and retrieve blocks when told to by clients or the NameNode.
+```
+
+```{r}
+# Question 20
+# The source of HDFS architecture in Hadoop originated as which of the following?
+# Google distributed Filesystem
+```
+
+```{r}
+# Question 21
+# The vertical scaling is
+# Upgrade individual components on the machine
+```
+
+```{r}
+# Question 22
+# What has prompted the Era of Big Data Analytics?
+# Big data and Cloud computing
+```
+
+```{r}
+# Question 23
+# Geolocation marketing is
+# the practice of using a customer's physical location to inform a business's advertising strategy
+```
+
+```{r}
+# Question 24
+# 1TB (One terabyte) is
+# 1e+12 byte
+```
+
+```{r}
+# Question 25
+# Unstructured data is
+# the data that does not conform to a data model or data schema
+```
+
+```{r}
+# Question 26
+# Explain with diagrams the difference between Hadoop core v2.0 and Hadoop core v3.0.
+
+# Handling Fault-tolerance: through replication (Hadoop core v2.0) | through erasure coding (Hadoop core v3.0)
+# storage: consumes 200% in HDFS (Hadoop core v2.0) | consumes just 50% (Hadoop core v3.0)
+# scalability: limited, up to 10000 nodes in a cluster (Hadoop core v2.0) | improved, over 10000 nodes in a cluster (Hadoop core v3.0)
+# file system: DFS, FTP and Amazon S3 (Hadoop core v2.0) | all features plus Microsoft Azure Data Lake File System (Hadoop core v3.0)
+# data balancing: Uses HDFS balancer for this purpose (Hadoop core v2.0) | Uses Intra-data node balancer (Hadoop core v3.0)
+```
+
+```{r}
+# Question 27
+# Explain the five V's of Big Data.
+# Volume, velocity, variety, veracity and value are five V's of big data.
+# volume: It efers to the amount of data that exists.
+# velocity: It refers to how quickly data is generated and how quickly that data moves.
+# variety: It refers to the diversity of data types.
+# veracity: It refers to the quality and accuracy of data.
+# value: This refers to the value that big data can provide, and it relates directly to what organizations can do with that collected data.
+```
+
+```{r}
+# Question 28
+# Assume that the data is available in the following data.table object.
+library(data.table)
+DT = data.table(
+  ID = c("b", "b", "b", "a", "a", "c"),
+  a = 1:6,
+  b = 7:12,
+  c = 13:18
+)
+# Answer next 3 questions
+# 1/3: Write a data.table statement to sort the data by ID in descending order.
+DT[order(DT$ID, decreasing = TRUE), ]
+```
+
+```{r}
+# Question 29
+# 2/3: Write a data.table statement to compute frequency of each ID and order them by ID.
+tab = table(DT$ID)
+tab[order(as.numeric(names(tab)))]
+```
+
+```{r}
+# Question 30
+# 3/3: Write a data.table statement to compute mean and standard deviation of each column group by ID. 
+xbar = DT[,.(mean(a), mean(b), mean(c)), by = ID]
+xbar[order(xbar$ID, decreasing = FALSE), ]
+
+std = DT[,.(sd(a), sd(b), sd(c)), by = ID]
+std[order(std$ID, decreasing = FALSE), ]
+
+```
+
+```{r}
+# Question 31
+# Explain in detail the MapReduce Technique. Please provide necessary diagram. [5pts for mapper and 5pts for reducer]
+# It is a programming Model for Hadoop Ecosystem.
+# MapReduce framework: is a programming model that simplifies parallel computing. 
+# It has two primary functions: 
+# 1) Map    ---> apply(), apply operations to all elements
+# 2) Reduce ---> summarize(), summerize operation on elements
+```
+
+```{r}
+# Question 32
+# Describe in detail structured data, unstructured data, semi-structured data and metadata.
+# structured data conforms to a data model or schema and is often stored in tabular form. It most often stored in a relational database.
+# unstructured data does not conform to a data model or schema and is often stored in tabular form. It has a faster growth rate than structured data.
+# semi-structured data has a defined level of structure and consistency, but is not relational in nature. It is hierarchical or graph-based. This kind of data is commonly stored in files that contain text.
+# Metadata provides information about a dataset's characteristics and structure. This type of data is mostly machine-generated and can be appended to data.
+```
+
+```{r}
+# Question 33
+# What is the effect if one of the HDFS nodes is lost?
+# Hadoop will recognize it and make copies of that data on some other nodes.
+# When Namenode stop receiving heart beats from the data nodes, it assumes that data node is lost. 
+# To keep the replication of the all the data to defined replication factor, it will make the copies on other data nodes.
+```
+
+
